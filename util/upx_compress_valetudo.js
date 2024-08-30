@@ -5,8 +5,8 @@ const UPX = require("upx");
 const binaries = {
     armv7: {
         base: "./build_dependencies/pkg/v3.5/built-v20.10.0-linuxstatic-armv7",
-        built: "./build/armv7/valetudo",
-        out: "./build/armv7/valetudo.upx",
+        built: "./build/valetudo-armv7",
+        out: "./build/valetudo-armv7.upx",
         upx: UPX({
             //ultraBrute: true // Disabled for now (2022-05-07) due to performance issues with the latest upx devel
 
@@ -17,8 +17,8 @@ const binaries = {
     },
     armv7_lowmem: {
         base: "./build_dependencies/pkg/v3.5/built-v20.10.0-linuxstatic-armv7",
-        built: "./build/armv7/valetudo-lowmem",
-        out: "./build/armv7/valetudo-lowmem.upx",
+        built: "./build/valetudo-armv7-lowmem",
+        out: "./build/valetudo-armv7-lowmem.upx",
         upx: UPX({
             //ultraBrute: true // Disabled for now (2022-05-07) due to performance issues with the latest upx devel
 
@@ -29,8 +29,8 @@ const binaries = {
     },
     aarch64: {
         base: "./build_dependencies/pkg/v3.5/built-v20.10.0-linuxstatic-arm64",
-        built: "./build/aarch64/valetudo",
-        out: "./build/aarch64/valetudo.upx",
+        built: "./build/valetudo-aarch64",
+        out: "./build/valetudo-aarch64.upx",
         upx: UPX({
             //ultraBrute: true // Disabled for now (2022-05-07) due to performance issues with the latest upx devel
 
