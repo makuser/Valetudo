@@ -51,6 +51,7 @@ class HassController {
         const debugConfig = this.config.get("debug");
 
         this.topicPrefix = this.controller.currentConfig.customizations.topicPrefix;
+        this.discoveryTopicPrefix = this.controller.currentConfig.interfaces.homeassistant.discoveryTopicPrefix;
         this.identifier = this.controller.currentConfig.identity.identifier;
         this.qos = this.controller.currentConfig.qos;
 
@@ -66,6 +67,15 @@ class HassController {
      */
     getBaseTopic() {
         return this.topicPrefix + "/" + this.identifier + "/hass";
+    }
+
+    /**
+     * Get discovery topic prefix for Home Assistant
+     *
+     * @return {string}
+     */
+    getDiscoveryTopicPrefix() {
+        return this.discoveryTopicPrefix;
     }
 
     /**

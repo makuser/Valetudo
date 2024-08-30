@@ -122,6 +122,21 @@
                             "type": "string"
                           }
                         }
+                      },
+                      "interfaces": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "homeassistant": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                              "discoveryTopicPrefix": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        }
                       }
                     }
                   },

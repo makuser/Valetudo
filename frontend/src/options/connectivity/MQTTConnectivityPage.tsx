@@ -433,6 +433,7 @@ const sanitizeTopicPrefix = (value: string) => {
 
 const sanitizeConfigBeforeSaving = (mqttConfiguration: MQTTConfiguration) => {
     mqttConfiguration.customizations.topicPrefix = sanitizeTopicPrefix(mqttConfiguration.customizations.topicPrefix);
+    mqttConfiguration.interfaces.homeassistant.discoveryTopicPrefix = sanitizeTopicPrefix(mqttConfiguration.interfaces.homeassistant.discoveryTopicPrefix);
 };
 
 const MQTTConnectivity = (): React.ReactElement => {
@@ -781,6 +782,34 @@ const MQTTConnectivity = (): React.ReactElement => {
                                 modifyMQTTConfig={modifyMQTTConfig}
                                 title="Delete autodiscovery on shutdown"
                                 configPath={["interfaces", "homeassistant", "cleanAutoconfOnShutdown"]}
+                            />
+                            <MQTTInput
+                                mqttConfiguration={mqttConfiguration}
+                                modifyMQTTConfig={modifyMQTTConfig}
+
+                                title="Discovery topic"
+                                helperText="MQTT topic for Home Assistant discovery"
+                                required={false}
+                                configPath={["interfaces", "homeassistant", "discoveryTopicPrefix"]}
+                                additionalProps={{
+                                    placeholder: mqttProperties.defaults.interfaces.homeassistant.discoveryTopicPrefix,
+                                    color: "warning",
+                                    onFocus: () => {
+                                        setAnchorElement(topicElement.current);
+                                    },
+                                    onBlur: () => {
+                                        setAnchorElement(null);
+                                    },
+                                }}
+                                inputPostProcessor={(value) => {
+                                    return sanitizeStringForMQTT(
+                                        value,
+                                        true
+                                    ).replace(
+                                        /\/\//g,
+                                        "/"
+                                    );
+                                }}
                             />
                         </FormGroup>
                     </FormControl>

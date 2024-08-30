@@ -270,6 +270,10 @@
                   },
                   "cleanAutoconfOnShutdown": {
                     "type": "boolean"
+                  },
+                  "discoveryTopicPrefix": {
+                    "type": "string",
+                    "description": "You can override the default \"homeassistant\" mqtt topic if you change the discovery path in home assistant e.g. to run multiple home assistant instances"
                   }
                 }
               }

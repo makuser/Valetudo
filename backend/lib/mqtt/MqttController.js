@@ -76,6 +76,11 @@ class MqttController {
             },
             customizations: {
                 topicPrefix: "valetudo"
+            },
+            interfaces: {
+                homeassistant: {
+                    discoveryTopicPrefix: "homeassistant"
+                }
             }
         };
 
@@ -199,7 +204,7 @@ class MqttController {
 
     /**
      * @public
-     * @return {{identity: {identifier: string}, customizations: {topicPrefix: string}}}
+     * @return {{identity: {identifier: string}, customizations: {topicPrefix: string}, interfaces: {homeassistant: {discoveryTopicPrefix: string}}}}
      */
     getConfigDefaults() {
         return this.configDefaults;
@@ -245,6 +250,10 @@ class MqttController {
 
         if (!this.currentConfig.customizations.topicPrefix) {
             this.currentConfig.customizations.topicPrefix = this.configDefaults.customizations.topicPrefix;
+        }
+
+        if (!this.currentConfig.interfaces.homeassistant.discoveryTopicPrefix) {
+            this.currentConfig.interfaces.homeassistant.discoveryTopicPrefix = this.configDefaults.interfaces.homeassistant.discoveryTopicPrefix;
         }
 
         this.currentConfig.stateTopic = this.currentConfig.customizations.topicPrefix + "/" + this.currentConfig.identity.identifier + "/$state";
@@ -960,6 +969,7 @@ module.exports = MqttController;
  *
  * @property {object} interfaces.homeassistant
  * @property {boolean} interfaces.homeassistant.enabled
+ * @property {string} interfaces.homeassistant.discoveryTopicPrefix
  * @property {boolean} interfaces.homeassistant.cleanAutoconfOnShutdown
  *
  * @property {Array<string>} optionalExposedCapabilities

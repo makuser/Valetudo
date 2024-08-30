@@ -260,6 +260,7 @@ export interface MQTTConfiguration {
         homeassistant: {
             enabled: boolean;
             cleanAutoconfOnShutdown: boolean;
+            discoveryTopicPrefix: string;
         };
     };
     optionalExposedCapabilities: Array<string>;
@@ -294,6 +295,11 @@ export interface MQTTProperties {
         };
         customizations: {
             topicPrefix: string;
+        };
+        interfaces: {
+            homeassistant: {
+                discoveryTopicPrefix: string;
+            }
         };
     };
     optionalExposableCapabilities: Array<string>;

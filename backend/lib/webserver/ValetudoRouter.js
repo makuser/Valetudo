@@ -277,7 +277,8 @@ class ValetudoRouter {
                 },
                 homeassistant: {
                     enabled: obj.interfaces.homeassistant.enabled,
-                    cleanAutoconfOnShutdown: obj.interfaces.homeassistant.cleanAutoconfOnShutdown
+                    cleanAutoconfOnShutdown: obj.interfaces.homeassistant.cleanAutoconfOnShutdown,
+                    discoveryTopicPrefix: obj.interfaces.homeassistant.discoveryTopicPrefix
                 }
             },
             optionalExposedCapabilities: Array.isArray(obj.optionalExposedCapabilities) ? [...new Set(obj.optionalExposedCapabilities)] : []
