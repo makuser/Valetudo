@@ -1,9 +1,9 @@
-const hashlru = require("hashlru");
+const QuickLRU = require("@alloc/quick-lru");
 const isInSubnet = require("is-in-subnet");
 const Logger = require("../../Logger");
 const Tools = require("../../utils/Tools");
 
-const IPAccessLRU = hashlru(15);
+const IPAccessLRU = new QuickLRU({maxSize: 15});
 
 /**
  *
