@@ -11,13 +11,13 @@ const manifest = {
 }
 
 const binaries = {
-    "valetudo-armv7": "./build/armv7/valetudo",
-    "valetudo-armv7-lowmem": "./build/armv7/valetudo-lowmem",
-    "valetudo-aarch64": "./build/aarch64/valetudo",
+    "valetudo-armv7": "./build/valetudo-armv7",
+    "valetudo-armv7-lowmem": "./build/valetudo-armv7-lowmem",
+    "valetudo-aarch64": "./build/valetudo-aarch64",
 
-    "valetudo-armv7.upx": "./build/armv7/valetudo.upx",
-    "valetudo-armv7-lowmem.upx": "./build/armv7/valetudo-lowmem.upx",
-    "valetudo-aarch64.upx": "./build/aarch64/valetudo.upx",
+    "valetudo-armv7.upx": "./build/valetudo-armv7.upx",
+    "valetudo-armv7-lowmem.upx": "./build/valetudo-armv7-lowmem.upx",
+    "valetudo-aarch64.upx": "./build/valetudo-aarch64.upx",
 }
 
 Object.values(binaries).forEach((path, i) => {
