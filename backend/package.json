@@ -35,13 +35,13 @@
   "dependencies": {
     "@alloc/quick-lru": "^5.2.0",
     "@destinationstransfers/ntp": "2.0.0",
-    "ajv": "8.12.0",
+    "ajv": "8.18.0",
     "async-mqtt": "2.6.3",
-    "axios": "0.28.0",
+    "axios": "0.31.0",
     "bonjour-service": "1.1.1",
     "compression": "1.7.4",
     "crc": "4.3.2",
-    "express": "4.19.2",
+    "express": "4.22.0",
     "express-basic-auth": "1.2.1",
     "express-dynamic-middleware": "1.0.0",
     "express-list-endpoints": "6.0.0",
@@ -54,7 +54,7 @@
     "openapi-validator-middleware": "3.2.6",
     "semaphore": "1.1.0",
     "swagger-ui-express": "5.0.0",
-    "uuid": "9.0.1",
+    "uuid": "14.0.0",
     "zoo-ids": "2.0.7"
   },
   "devDependencies": {
